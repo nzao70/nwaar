@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun ken Rock</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Monomaniac+One&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="IMAGE/Nwaar-icon.png" type="image/icon type">
+    <script src="https://kit.fontawesome.com/88b98d8504.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0.2em;
+            height: 0.2em;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #101728;
+            border-radius: 100px;
+            margin-block: .5em;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(rgb(185, 32, 32), rgb(117, 10, 10), rgb(0, 0, 0));
+            border-radius: 100px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            height: 150vh;
+            background-color: #000000;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+
+
+
+
+        .search-box {
+            width: 80%;
+            background: linear-gradient(140deg, #4d0000, black);
+            border-radius: 10px;
+        }
+
+        #searchInput {
+            color: white;
+            /* Définissez la couleur du texte sur blanc */
+        }
+
+        #input-box {
+            color: white;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        input {
+            flex: 1;
+            height: 30px;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            font-size: 18px;
+        }
+
+        button {
+            background: transparent;
+            border: 0;
+            outline: 0;
+        }
+
+        button .fa-solid {
+            width: 25px;
+            color: rgb(255, 255, 255);
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .fa-solid:hover {
+            transform: scale(1.3);
+        }
+
+        ::placeholder {
+            color: #b33b3b;
+        }
+
+        .result-box ul {
+            border-top: 1px solid #bca515;
+            padding: 15px 10px;
+        }
+
+        .result-box ul li {
+            list-style: none;
+            border-radius: 3px;
+            padding: 15px 10px;
+            cursor: pointer;
+            color: #bca515;
+            transition: all 0.5s;
+        }
+
+        .result-box ul li:hover {
+            background: #bca515;
+            color: #ffffff;
+        }
+
+        .result-box {
+            max-height: 300px;
+            overflow-y: scroll;
+        }
+
+
+
+
+
+        header {
+            position: absolute;
+            color: rgb(255, 255, 255);
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .logo h1 {
+            font-family: 'Gasoek One', sans-serif;
+            margin: 20px;
+            font-size: 70px;
+        }
+
+        .navbar {
+            z-index: 999;
+            position: absolute;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+            align-items: center;
+
+        }
+
+
+
+
+
+        .menu {
+            z-index: 999;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            background: rgba(0, 0, 0, 0.417);
+            padding: 20px;
+            border-radius: 40px;
+        }
+
+
+
+        @media screen and (max-width: 100000px) {
+            .navbar {
+                padding: 0;
+            }
+
+
+            .nav-links {
+                z-index: 2;
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.491);
+                backdrop-filter: blur(3px);
+                width: 100%;
+                height: 50vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.5s ease;
+            }
+
+            #nav-links {
+                margin-left: -100%;
+            }
+
+            #nav-links.show {
+                margin-left: 0;
+            }
+        }
+
+
+
+
+
+
+        #all {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .slider {
+            background: url(https://ufklhnt.imrkmovrdrrz.hath.network/h/47cc9bbfc35778656f3cbd220b46a32daad08f62-382936-1280-1918-jpg/keystamp=1702753200-0b05fb3fdc;fileindex=139298515;xres=1280/Nurse_2B_1.jpg) no-repeat;
+            background-position: center center;
+            background-size: 100%;
+            overflow: hidden;
+            width: 100%;
+            padding: 0;
+            height: auto;
+            border-radius: 20px;
+            margin-top: 160px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .sliders {
+            padding: 0;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            animation: glisse 35s infinite ease;
+            background: black;
+        }
+
+        .slide {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            width: 300px;
+            height: 370px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* slider */
+        @media screen and (max-width: 600px) {
+            .sliders {
+                animation: glisse1 40s infinite ease;
+
+            }
+
+        }
+
+
+
+
+
+
+        .chasse {
+            width: 100%;
+            height: auto;
+            z-index: 997;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .solarb {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            flex-wrap: wrap;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .solarb button {
+            border-radius: 4px;
+            padding: 10px;
+            border: none;
+            background: #101728;
+            color: white;
+            transition: all 0.3s ease;
+            font: small-caps bold 14px/1 sans-serif;
+        }
+
+        .solarb button:hover {
+            background: #950d0d;
+            transform: scale(1.06);
+        }
+
+
+
+
+
+
+
+
+        .tap {
+            position: relative;
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.263);
+            color: white;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            gap: 50px;
+        }
+
+        .comal {
+            padding: 6px;
+            position: relative;
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.263);
+            color: white;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            top: 20px;
+            border-radius: 20px;
+            gap: 10px;
+        }
+
+        .dropdown {
+            padding: 5px;
+            width: 199px;
+            min-width: 199px;
+            height: 350px;
+            border-radius: 5px;
+            color: white;
+            transition: width 0.4s ease-in-out;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+
+
+        .linkslide {
+            display: contents;
+        }
+
+        .card {
+            border-radius: 10px;
+            width: 270px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+
+        .card a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card .image {
+            height: 250px;
+            width: 200px;
+        }
+
+        .card .image img {
+            border-radius: 10px;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content .info {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2px;
+        }
+
+        .name {
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .name a {
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .name h2 {
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        .card button {
+            border-radius: 4px;
+            padding: 5px;
+            border: none;
+            background: #101728;
+            color: white;
+            transition: all 0.3s ease;
+            font: small-caps bold 14px/1 sans-serif;
+        }
+
+        .card button:hover {
+            background: #7e0101;
+            transform: scale(1.06);
+        }
+
+        .bloc-top {
+            margin-top: 5px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .bloc-top img {
+            width: 20px;
+        }
+
+        .bloc-links {
+            min-width: 210px;
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        .bloc-linksplus {
+            border: 3px inset;
+            border-color: #000000;
+            background: linear-gradient(140deg, #4d002fa3, black);
+            padding: 10px;
+            border-radius: 5px;
+            font: small-caps bold 14px/1 sans-serif;
+        }
+
+        .blocslice {
+            width: 500%;
+            height: 94%;
+            margin-top: 6px;
+        }
+
+        .blocslicetitle {
+            background: #9705057e;
+            padding: 10px;
+            border-radius: 3px;
+        }
+
+        .blocslicetitleplus {
+            padding: 10px;
+            border-radius: 5px;
+            font: small-caps bold 14px/1 sans-serif;
+        }
+
+        .blocslicetitleplusspanslach {
+            font-size: 30px;
+            margin-left: 5px;
+        }
+
+        .blocslicetitleend {
+            padding: 5px;
+            margin-left: 3px;
+            border: inset;
+            border-color: #0a013e;
+        }
+
+        .sextypemal {
+            border-radius: 5px;
+            height: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 5px;
+            font: small-caps bold 14px/1 sans-serif;
+        }
+
+        .sextypemal div {
+            padding: 4px;
+            border-radius: 5px;
+            background: rgb(0, 22, 71);
+        }
+
+        .sextypefemal {
+            border-radius: 5px;
+            height: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 5px;
+            font: small-caps bold 14px/1 sans-serif;
+        }
+
+        .sextypefemal div {
+            padding: 4px;
+            border-radius: 5px;
+            background: rgb(182, 18, 149);
+        }
+
+        .pagenote {
+            width: 200px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font: small-caps bold 14px/1 sans-serif;
+        }
+
+        .pagenote span {
+            padding: 8px 40px 8px 40px;
+            border: ridge;
+        }
+
+        #refreshButton {
+            transform: rotate(0.5turn);
+            transition: 6s ease;
+        }
+        #refreshButton:hover{
+            transform: rotate(3.5turn);
+        }
+        
+
+        @media screen and (max-width: 600px) {
+            html {
+                overflow-x: hidden;
+            }
+
+            .comal {
+                justify-content: flex-start;
+            }
+
+            .dropdown {
+                padding: 5px;
+                width: 170px;
+                min-width: 170px;
+                height: 310px;
+
+            }
+
+            .card .image {
+                width: 160px;
+            }
+
+        }
+
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes glisse {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-900px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glisse1 {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-1970px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* PHONE */
+
+        @media screen and (max-width: 470px) {
+
+            .dropdown {
+                width: 149px;
+                min-width: 149px;
+                height: 340px;
+            }
+
+            .logo h1 {
+                font-size: 50px;
+            }
+
+
+            .slider {
+                border-radius: 20px;
+                margin-top: 130px;
+            }
+
+
+            .slide {
+                width: 230px;
+                height: 300px;
+            }
+
+            #tap {
+                padding-left: 60px;
+            }
+
+
+            #tap.show {
+                padding-left: 0px;
+            }
+
+            .card .image {
+                height: 200px;
+                width: 150px;
+            }
+
+        }
+
+        footer {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            z-index: 1;
+            top: 300px;
+            background: #000000;
+            color: rgb(83, 83, 83);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>NWAAR <br> ヌワール</h1>
+            </div>
+
+            <div id="menu-hamburger" class="menu"><i class="fa-solid fa-magnifying-glass fa-2xl"
+                    style="margin: 17px;"></i></div>
+
+            <div class="nav-links" id="nav-links">
+                <div class="search-box">
+                    <div class="row">
+                        <input type="text" id="input-box" placeholder="search anything" autocomplete="off">
+                        <button onclick="myfunction()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="result-box">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="all">
+        <!-- SLIDE IMAGE -->
+        <div class="slider">
+            <div class="sliders">
+                <div class="slide">
+                    <img src="IMAGE/chainsawman/chainsawcover.gif">
+                </div>
+                <div class="slide">
+                    <img src="IMAGE/fire-punch/coverfirepunch.jpg">
+                </div>
+                <div class="slide">
+                    <img src="IMAGE/Jujutsukaisen/jujutsukaisencover.gif">
+                </div>
+                <div class="slide">
+                    <img src="IMAGE/coverBL.jpg">
+                </div>
+                <div class="slide">
+                    <img src="IMAGE/coverinvincible.jpg">
+                </div>
+                <div class="slide">
+                    <img src="IMAGE/terrorhuntercover.jpg">
+                </div>
+                <div class="slide">
+                    <img src="IMAGE/VYF.png">
+                </div>
+                <div class="slide">
+                    <img src="IMAGE/vyt.png">
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="chasse">
+            <div class="solarb">
+                <button class="category-btn" id="frBtn" onclick="toggleLanguage('fr')">Français</button>
+                <button class="category-btn" id="enBtn" onclick="toggleLanguage('en')">Anglais</button>
+                <!--jv yjfjtc-->
+                <button class="category-btn hidden" id="mangaBtn" onclick="forma('Manga')">Manga</button>
+                <button class="category-btn hidden" id="filmBtn" onclick="forma('Film')">Film</button>
+                <button class="category-btn hidden" id="webtoonBtn" onclick="forma('Webtoon')">Webtoon</button>
+                <!--gchdxgffcnhvht-->
+                <button class="category-btn hidden" id="fantastiqueBtn"
+                    onclick="selectCategory('Fantastique')">Fantastique</button>
+                <button class="category-btn hidden" id="actionBtn" onclick="selectCategory('Action')">Action</button>
+                <button class="category-btn hidden" id="romantiqueBtn"
+                    onclick="selectCategory('Romantique')">Romantique</button>
+                <button class="category-btn hidden" id="rockBtn" onclick="selectCategory('Rock')">Rock</button>
+                <button class="category-btn hidden" id="11eSiecleBtn" onclick="selectCategory('11e Siècle')">11e
+                    Siècle</button>
+                <button class="category-btn hidden" id="frenchyBtn" onclick="selectCategory('Frenchy')">Frenchy</button>
+                <!--gg fvfbx-->
+                <button onclick="back()"><img style="width: 15px;"
+                        src="https://www.qrlod-game.qc.lu/IMAGE/rejou%C3%A9.png"></button>
+            </div>
+
+
+
+
+
+
+            <div class="search-box">
+                <div class="row">
+                    <input type="text" id="searchInput" placeholder="sélectionner en haut avec les bouton"
+                        onkeyup="filterItems()">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tap" id="tap">
+            <div class="comal">
+
+                <!--magnga----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+                <!--webtoon---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+                <!--film----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+                <!--anime----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+                <div class="dropdown" style="background: rgb(90, 0, 0);" data-keywords="/manga/fantastique/action">
+                    <a href="https://imgsol.rf.gd/adult/Sun-ken-Rock/Tome-1.html" class="linkslide">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img
+                                        src="https://ehgt.org/e8/82/e8827dbaab9ce34c4d696528d0506c33be532846-4405878-1200-2000-png_250.jpg">
+                                </div>
+                                <div class="info">
+                                    <div class="name">
+                                        <a href="https://imgsol.rf.gd/adult/Sun-ken-Rock/Tome-1.html">
+                                            <h2>Sun-ken-Rock
+                                            </h2>
+                                            <p>MANGA/ 🇫🇷</p>
+                                        </a>
+                                        <button class="bloc-top"><img
+                                                src="https://www.qrlod-game.qc.lu/animmanga/IMAGE/plus1.png"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bloc-links">
+                                <div class="blocslice">
+                                    <div class="blocslicetitle"> <strong>
+                                            [Oojinushi
+                                            (Ryuuta)] Ayamachi Soshite Mata Ayamachi... [Spanish] [DK]
+                                            [Digital]</strong></div>
+                                    <div class="blocslicetitleplus">
+                                        hzfqcjcvefy<span class="blocslicetitleplusspanslach"><strong>/</strong></span>
+                                        <span class="blocslicetitleend">ヌワールSQDKBHVFU</span>
+                                    </div>
+                                    <div class="bloc-linksplus">
+                                        french / douj /
+                                        parody=svbdusvjgf</div>
+                                    <div>
+                                        <div class="sextypemal" style="width: 20%;">
+                                            <div>hvbsueyfvb</div>
+                                            <div>dbfzuzefvuyzei</div>
+                                            <div>sefbheyvag</div>
+                                            <div>wfeb"ubryf</div>
+                                        </div>
+                                        <div class="sextypefemal" style="width: 20%;">
+                                            <div>hvbsueyfvb</div>
+                                            <div>dbfzuzefvuyzei</div>
+                                            <div>sefbheyvag</div>
+                                            <div>wfeb"ubryf</div>
+                                        </div>
+                                    </div>
+                                    <div class="pagenote">
+                                        <span>25pjvbz/5 like</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="dropdown" style="background: rgb(90, 59, 0);" data-keywords="/manga/fantastique/action">
+                    <a href="https://imgsol.rf.gd/adult/Sun-ken-Rock/Tome-1.html" class="linkslide">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="image">
+                                    <img
+                                        src="https://ehgt.org/e8/82/e8827dbaab9ce34c4d696528d0506c33be532846-4405878-1200-2000-png_250.jpg">
+                                </div>
+                                <div class="info">
+                                    <div class="name">
+                                        <a href="https://imgsol.rf.gd/adult/Sun-ken-Rock/Tome-1.html">
+                                            <h2>Sun-ken-Rock
+                                            </h2>
+                                            <p>MANGA/ 🇫🇷</p>
+                                        </a>
+                                        <button class="bloc-top"><img
+                                                src="https://www.qrlod-game.qc.lu/animmanga/IMAGE/plus1.png"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bloc-links">
+                                <div class="blocslice">
+                                    <div class="blocslicetitle"> <strong>
+                                            [Oojinushi
+                                            (Ryuuta)] Ayamachi Soshite Mata Ayamachi... [Spanish] [DK]
+                                            [Digital]</strong></div>
+                                    <div class="blocslicetitleplus">
+                                        hzfqcjcvefy<span class="blocslicetitleplusspanslach"><strong>/</strong></span>
+                                        <span class="blocslicetitleend">ヌワールSQDKBHVFU</span>
+                                    </div>
+                                    <div class="bloc-linksplus">
+                                        french / douj /
+                                        parody=svbdusvjgf</div>
+                                    <div>
+                                        <div class="sextypemal" style="width: 20%;">
+                                            <div>hvbsueyfvb</div>
+                                            <div>dbfzuzefvuyzei</div>
+                                            <div>sefbheyvag</div>
+                                            <div>wfeb"ubryf</div>
+                                        </div>
+                                        <div class="sextypefemal" style="width: 20%;">
+                                            <div>hvbsueyfvb</div>
+                                            <div>dbfzuzefvuyzei</div>
+                                            <div>sefbheyvag</div>
+                                            <div>wfeb"ubryf</div>
+                                        </div>
+                                    </div>
+                                    <div class="pagenote">
+                                        <span>25pjvbz/5 like</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <button id="refreshButton" onclick="refreshPage()"><img style="width: 90px;"
+                        src="https://www.qrlod-game.qc.lu/IMAGE/rejou%C3%A9.png"></button>
+
+
+            </div>
+            <footer>
+                &copy; 2023 - QRlod-scantrad by The monitor | Tout droits réservés
+            </footer>
+        </div>
+    </section>
+
+    <script>
+        function refreshPage() {
+            // Rechargez la page
+            location.reload();
+        }
+    </script>
+    <script>
+        // Sélectionnez tous les boutons avec la classe "category-btn"
+        const categoryButtons = document.querySelectorAll('.category-btn');
+
+        // Ajoutez un gestionnaire d'événements à chaque bouton
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function () {
+
+                // Appellez la fonction pour sélectionner la catégorie
+                selectCategory(button.innerHTML.trim());
+            });
+        });
+        
+        function back() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('enBtn').classList.remove('hidden');
+            document.getElementById('frBtn').classList.remove('hidden');
+            document.getElementById('mangaBtn').classList.add('hidden');
+            document.getElementById('filmBtn').classList.add('hidden');
+            document.getElementById('webtoonBtn').classList.add('hidden');
+            document.getElementById('fantastiqueBtn').classList.add('hidden');
+            document.getElementById('actionBtn').classList.add('hidden');
+            document.getElementById('romantiqueBtn').classList.add('hidden');
+            document.getElementById('rockBtn').classList.add('hidden');
+            document.getElementById('11eSiecleBtn').classList.add('hidden');
+            document.getElementById('frenchyBtn').classList.add('hidden');
+        }
+
+
+
+        function toggleLanguage(language) {
+            if (language === 'fr') {
+                document.getElementById('enBtn').classList.add('hidden');
+                document.getElementById('frBtn').classList.add('hidden');
+                document.getElementById('mangaBtn').classList.remove('hidden');
+                document.getElementById('filmBtn').classList.remove('hidden');
+                document.getElementById('webtoonBtn').classList.remove('hidden');
+            } else if (language === 'en') {
+                document.getElementById('frBtn').classList.add('hidden');
+                document.getElementById('enBtn').classList.add('hidden');
+                document.getElementById('mangaBtn').classList.remove('hidden');
+                document.getElementById('filmBtn').classList.remove('hidden');
+                document.getElementById('webtoonBtn').classList.remove('hidden');
+            }
+        }
+        function forma(silo) {
+            if (silo === 'Manga') {
+                document.getElementById('mangaBtn').classList.add('hidden');
+                document.getElementById('filmBtn').classList.add('hidden');
+                document.getElementById('webtoonBtn').classList.add('hidden');
+
+                document.getElementById('fantastiqueBtn').classList.remove('hidden');
+                document.getElementById('actionBtn').classList.remove('hidden');
+                document.getElementById('romantiqueBtn').classList.remove('hidden');
+            } else if (silo === 'Film') {
+                document.getElementById('mangaBtn').classList.add('hidden');
+                document.getElementById('filmBtn').classList.add('hidden');
+                document.getElementById('webtoonBtn').classList.add('hidden');
+
+                document.getElementById('rockBtn').classList.remove('hidden');
+                document.getElementById('11eSiecleBtn').classList.remove('hidden');
+                document.getElementById('frenchyBtn').classList.remove('hidden');
+            } else if (silo === 'Webtoon') {
+                document.getElementById('mangaBtn').classList.add('hidden');
+                document.getElementById('filmBtn').classList.add('hidden');
+                document.getElementById('webtoonBtn').classList.add('hidden');
+
+                document.getElementById('rockBtn').classList.remove('hidden');
+                document.getElementById('11eSiecleBtn').classList.remove('hidden');
+                document.getElementById('frenchyBtn').classList.remove('hidden');
+            }
+        }
+
+        // Fonction pour sélectionner une catégorie
+        function selectCategory(category) {
+            // Récupérez la valeur actuelle de la barre de recherche
+            let currentText = document.getElementById('searchInput').value;
+
+            if (!currentText.toLowerCase().includes(category.toLowerCase())) {
+                // Ajoutez la nouvelle catégorie à la suite du texte existant
+                let newText = currentText + '/' + category;
+
+                // Mettez à jour la valeur de la barre de recherche avec le nouveau texte
+                document.getElementById('searchInput').value = newText;
+
+                // Affichez les résultats en fonction de la nouvelle valeur
+                filterItems();
+            }
+        }
+        function filterItems() {
+            // Récupérez la valeur de la barre de recherche
+            let searchValue = document.getElementById("searchInput").value.toLowerCase();
+
+            // Sélectionnez tous les éléments dropdown
+            let dropdowns = document.querySelectorAll('.dropdown');
+
+            // Parcourez chaque élément dropdown
+            dropdowns.forEach((dropdown) => {
+                // Récupérez les mots-clés de l'attribut data-keywords
+                let keywords = dropdown.dataset.keywords.toLowerCase();
+
+                // Affichez ou masquez l'élément en fonction des mots-clés et de la valeur de recherche
+                if (keywords.includes(searchValue) && searchValue !== '') {
+                    dropdown.style.display = 'block';
+                } else {
+                    dropdown.style.display = 'none';
+                }
+            });
+        }
+
+
+    </script>
+
+    <script>
+        let availablekeywords = [
+            'a delicate relationship',
+            'silent war, my kingdom',
+            'Sun ken rock',
+            'publié',
+            'Gagné de argent',
+            'développement personnel',
+        ];
+
+        const resultsBox = document.querySelector(".result-box");
+        const inputBox = document.getElementById("input-box");
+
+        inputBox.onkeyup = function () {
+            let result = [];
+            let input = inputBox.value;
+            if (input.length) {
+                result = availablekeywords.filter((keyword) => {
+                    return keyword.toLowerCase().includes(input.toLowerCase());
+                });
+                console.log(result)
+            }
+            display(result);
+
+            if (!result.length) {
+                resultsBox.innerHTML = '';
+            }
+        }
+
+        function display(result) {
+            const content = result.map((list) => {
+                return "<li onclick=selectInput(this)>" + list + "</li>"
+            });
+
+            resultsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
+        }
+
+        function selectInput(list) {
+            inputBox.value = list.innerHTML;
+            resultsBox.innerHTML = '';
+        }
+
+
+        function myfunction() {
+            if (inputBox.value === "silent war, my kingdom") {
+                window.location.href = "Silent War/silent-war.html";
+
+
+            } else if (inputBox.value === "publié") {
+                window.location.href = "https://qrlod-land.frog.tech/publie";
+
+
+            } else if (inputBox.value === "Gagné de argent") {
+                window.location.href = "https://qrlod-game.fr/game-qr/index.html";
+
+
+            } else if (inputBox.value === "développement personnel") {
+                window.location.href = "https://nzaomediamaker.systeme.io/6cf98807";
+
+            } else if (inputBox.value === "Sun ken rock") {
+                window.location.href = "Sun-ken-Rock/Sun-Ken-Rock.html";
+
+            } else if (inputBox.value === "a delicate relationship") {
+                window.location.href = "A delicate relationship/a-delicate-relationship.html";
+
+
+
+            } else {
+                // Gérer le cas où le mot saisi ne correspond à aucune redirection
+                // Par exemple, afficher un message d'erreur ou ne rien faire
+            }
+
+        }
+    </script>
+    <script>
+        const searchButton = document.querySelector("#menu-hamburger");
+        const searchInput = document.querySelector("#nav-links");
+
+        searchButton.addEventListener("click", () => {
+            searchInput.classList.toggle("show");
+        })
+
+    </script>
+    <script>
+        const dropdowns = document.querySelectorAll(".dropdown");
+        const btnDrops = document.querySelectorAll(".bloc-top");
+        const padnon = document.querySelector("#tap");
+
+        btnDrops.forEach((btnDrop, index) => {
+            let toggleIndex = 0;
+
+
+            btnDrop.addEventListener('click', () => {
+                const dropdown = dropdowns[index];
+
+                padnon.classList.toggle("show");
+
+                if (toggleIndex === 0) {
+                    dropdown.style.width = dropdown.scrollWidth + "px";
+                    toggleIndex++;
+                } else {
+                    dropdown.style.width = btnDrop.scrollWidth + "px";
+                    toggleIndex--;
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

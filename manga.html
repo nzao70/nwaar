@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tome 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Monomaniac+One&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="IMAGE/Nwaar-icon.png" type="image/icon type">
+    <script src="https://kit.fontawesome.com/88b98d8504.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0.2em;
+            height: 0.2em;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #101728;
+            border-radius: 100px;
+            margin-block: .5em;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(rgb(185, 32, 32), rgb(117, 10, 10), rgb(0, 0, 0));
+            border-radius: 100px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            height: 150vh;
+            background-color: #000000;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+
+        .search-box {
+            width: 80%;
+            background: linear-gradient(140deg, #4d0000, black);
+            border-radius: 10px;
+        }
+
+        #searchInput {
+            color: white;
+            /* Définissez la couleur du texte sur blanc */
+        }
+
+        #input-box {
+            color: white;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        input {
+            flex: 1;
+            height: 30px;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            font-size: 18px;
+        }
+
+        button {
+            background: transparent;
+            border: 0;
+            outline: 0;
+        }
+
+        button .fa-solid {
+            width: 25px;
+            color: rgb(255, 255, 255);
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .fa-solid:hover {
+            transform: scale(1.3);
+        }
+
+        ::placeholder {
+            color: #b33b3b;
+        }
+
+        .result-box ul {
+            border-top: 1px solid #bca515;
+            padding: 15px 10px;
+        }
+
+        .result-box ul li {
+            list-style: none;
+            border-radius: 3px;
+            padding: 15px 10px;
+            cursor: pointer;
+            color: #bca515;
+            transition: all 0.5s;
+        }
+
+        .result-box ul li:hover {
+            background: #bca515;
+            color: #ffffff;
+        }
+
+        .result-box {
+            max-height: 300px;
+            overflow-y: scroll;
+        }
+
+
+
+
+
+        header {
+            position: absolute;
+            color: rgb(255, 255, 255);
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .logo h1 {
+            font-family: 'Gasoek One', sans-serif;
+            margin: 20px;
+            font-size: 70px;
+        }
+
+        .navbar {
+            z-index: 999;
+            position: absolute;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+            align-items: center;
+
+        }
+
+
+
+
+
+        .menu {
+            z-index: 999;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            background: rgba(0, 0, 0, 0.417);
+            padding: 20px;
+            border-radius: 40px;
+        }
+
+
+
+        @media screen and (max-width: 100000px) {
+            .navbar {
+                padding: 0;
+            }
+
+
+            .nav-links {
+                z-index: 2;
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.491);
+                backdrop-filter: blur(3px);
+                width: 100%;
+                height: 50vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.5s ease;
+            }
+
+            #nav-links {
+                margin-left: -100%;
+            }
+
+            #nav-links.show {
+                margin-left: 0;
+            }
+        }
+
+
+
+
+
+        .big h1 {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .big {
+            position: absolute;
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.263);
+            color: white;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 220px;
+        }
+
+        .bloc-shap {
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            margin-top: 230px;
+        }
+
+        .shap {
+            width: 90%;
+            height: auto;
+            padding: 0;
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+        }
+
+        .slam {
+            width: 90%;
+            height: 700px;
+            overflow: auto;
+            white-space: nowrap;
+            direction: rtl;
+        }
+
+
+
+        .page-break {
+            width: auto;
+            height: 647px;
+            display: inline-block;
+            margin-right: 5px;
+            margin-top: 20px;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+
+
+        .page-break img {
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .page-break video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .page-break audio {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .page-break iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /*
+.page-break {
+    margin: 0px;
+    margin-top: -3px;
+    margin-bottom: -3px;
+     -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+*/
+        .dropdown {
+            max-width: 320px;
+            height: 33.28px;
+            border-radius: 5px;
+            color: white;
+            background: #5f070770;
+            transition: height 0.4s ease-in-out;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .bloc-top {
+            padding: 7px;
+            display: block;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #00021e82;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .bloc-top:hover {
+            background: #68050582;
+        }
+
+        .bloc-top img {
+            width: 20px;
+        }
+
+        .bloc-links {
+            padding: 0px;
+            height: auto;
+        }
+
+        .bloc-links ul {
+            width: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            list-style-type: none;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 0px;
+        }
+
+
+        .bloc-links li {
+            text-decoration: none;
+            list-style-type: none;
+            padding: 10px;
+            border-radius: 4px;
+            height: auto;
+            transition: all 0.3s ease;
+        }
+
+        .bloc-links li:hover {
+            background-color: #000000;
+        }
+
+        .bloc-links li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .bloc-links li:last-child {
+            padding-bottom: 25px;
+        }
+
+        .mouv {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 97%;
+        }
+
+        .mouv-plus button {
+            margin: 5px;
+            border-radius: 4px;
+            height: 26px;
+            width: 90px;
+            border: none;
+            background: #101728;
+            color: white;
+            transition: all 0.3s ease;
+            font: small-caps bold 14px/1 sans-serif;
+        }
+
+        .mouv-plus button:hover {
+            background: #DFC61E;
+            transform: scale(1.06);
+        }
+
+        .remonte {
+            z-index: 4;
+            border-radius: 4px;
+            height: 35px;
+            width: 100%;
+            border: none;
+            background: #000000;
+            transition: all 0.3s ease;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        .remonte img {
+            width: 30px;
+        }
+
+        .remonte:hover {
+            background: #5c0606;
+            transform: scale(1.06);
+        }
+
+        @media screen and (max-width: 470px) {
+            .mouv {
+                width: 100%;
+            }
+
+            .bloc-shap {
+                margin-top: 280px;
+            }
+
+            .shap {
+                width: 100%;
+            }
+
+            .slam {
+                height: auto;
+            }
+
+            .page-break {
+                height: 447px;
+            }
+
+        }
+
+        .chatforum {
+            background: linear-gradient(200deg, #DFC61E, #fff197);
+            border: 2px solid #f5de46;
+            border-radius: 20px;
+            height: auto;
+            width: auto;
+            padding: 17px;
+            margin: 20px;
+            color: #542108;
+            font: small-caps bold 15px/1 sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .chatforum:hover {
+            background: linear-gradient(100deg, #DFC61E, #fff197);
+            transform: scale(1.04);
+        }
+
+        @media screen and (max-width: 470px) {
+
+            .logo h1 {
+                font-size: 50px;
+            }
+
+        }
+
+
+
+        #all {
+            width: 100%;
+        }
+
+
+
+
+
+        .imat {
+            border-radius: 10px;
+            width: 370px;
+            height: 500px;
+            background-image: url(IMAGE/vyt.png);
+            background-size: 100%;
+            background-position: center;
+        }
+
+        .synop {
+            width: 400px;
+            margin-left: 40px;
+            padding: 20px;
+        }
+
+        .inform {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        @media screen and (max-width: 700px) {
+
+
+            .inform {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+        }
+
+        @media screen and (max-width: 672px) {
+            .synop {
+                width: 350px;
+            }
+        }
+
+        @media screen and (max-width: 572px) {
+            .synop {
+                width: 290px;
+            }
+        }
+
+        .inform table {
+            padding: 20px;
+            font-size: 22px;
+        }
+
+        .inform table a {
+            color: rgb(245, 92, 92);
+            text-decoration-line: none;
+        }
+
+
+
+        footer {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            z-index: 1;
+            background: #000000;
+            color: rgb(83, 83, 83);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            top: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>NWAAR <br> ヌワール</h1>
+            </div>
+
+            <div id="menu-hamburger" class="menu"><i class="fa-solid fa-magnifying-glass fa-2xl"
+                    style="margin: 17px;"></i></div>
+            <div class="nav-links" id="nav-links">
+                <div class="search-box">
+                    <div class="row">
+                        <input type="text" id="input-box" placeholder="search anything" autocomplete="off">
+                        <button onclick="myfunction()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="result-box">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="all">
+        <div class="big">
+            <h1>Fire Punch Tome 1</h1>
+            <div class="mouv">
+                <div class="dropdown">
+                    <button class="bloc-top">
+                        <span>Tome 1</span>
+                        <img src="IMAGE/flech.png" alt="déroulé">
+                    </button>
+                    <div class="bloc-links">
+                        <ul>
+                            <li><a href="/"><img
+                                        src="https://raw.githubusercontent.com/nzao70/fire/main/FirePunchTome1-001.jpg"
+                                        width="90px" height="100px">df,dbgnrsihbqiq b</a></li>
+                            <li><a href="/"><img
+                                        src="https://raw.githubusercontent.com/nzao70/fire/main/FirePunchTome1-001.jpg"
+                                        width="90px" height="100px">df,dbgnrsihbqiq b</a></li>
+                            <li><a href="/"><img
+                                        src="https://raw.githubusercontent.com/nzao70/fire/main/FirePunchTome1-001.jpg"
+                                        width="90px" height="100px">df,dbgnrsihbqiq b</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mouv-plus">
+                    <a href="Fire-Punch.html"><button>chat</button></a>
+                    <button class="screena"><img src="https://www.qrlod-game.qc.lu//animmanga/IMAGE/fullscreen"
+                            width="20px" alt="plein écran"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bloc-shap">
+        <div class="shap">
+            <div class="slam">
+                <div class="page-break no-gaps">
+                    <img src="https://www.qrlod-game.qc.lu/animmanga/IMAGE/recharge.gif">
+                </div>
+
+                <div class="page-break no-gaps">
+                    <img id="image-0" src="IMAGE/fire-punch/disclam.gif"
+                        alt="je t'en supplie ce genre d'oeuvre sont faites pour les personnes qui ont la tête sur les épaules, si tu n'es pas sûr de pas devenir dépressif je t'en supplie passe ton chemin.">
+                </div>
+
+                <div class="page-break no-gaps">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HGGif8I8ZKg?si=t0K-jjLePMRjJ-cm"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+
+                <script>
+                    for (let i = 1; i <= 9; i++) {
+                        const imgElement = document.createElement('div');
+                        imgElement.className = 'page-break no-gaps';
+                        imgElement.innerHTML = `<img id="image-${i}" src="https://raw.githubusercontent.com/nzao70/fire/main/FirePunchTome1-00${i}.jpg">`;
+                        document.querySelector('.slam').appendChild(imgElement);
+                    }
+                    for (let i = 10; i <= 99; i++) {
+                        const imgElement = document.createElement('div');
+                        imgElement.className = 'page-break no-gaps';
+                        imgElement.innerHTML = `<img id="image-${i}" src="https://raw.githubusercontent.com/nzao70/fire/main/FirePunchTome1-0${i}.jpg">`;
+                        document.querySelector('.slam').appendChild(imgElement);
+                    }
+                    for (let i = 100; i <= 203; i++) {
+                        const imgElement = document.createElement('div');
+                        imgElement.className = 'page-break no-gaps';
+                        imgElement.innerHTML = `<img id="image-${i}" src="https://raw.githubusercontent.com/nzao70/fire/main/FirePunchTome1-${i}.jpg">`;
+                        document.querySelector('.slam').appendChild(imgElement);
+                    }
+                </script>
+            </div>
+
+            <div style="color: white; width: 100%; height: auto;">
+                <div class="inform">
+                    <div class="imat">
+                    </div>
+                    <div>
+                        <p class="synop"> <strong>Synopsis:</strong> Le héros de Jujutsu Kaisen, Yuji Itadori, un
+                            lycéen, se
+                            retrouve confronté aux forces occultes et est enrôlé dans une école d'exorcisme le jour où
+                            il se
+                            voit possédé par le démon millénaire Ryomen Sukuna.</p>
+                        <table style="margin: 30px; gap: 30px; width: 360px;">
+                            <tr>
+                                <th>Autres</th>
+                                <td>jjk, Jujutsu Kaisen</td>
+                            </tr>
+                            <tr>
+                                <th>Auteur</th>
+                                <td> <a
+                                        href="https://www.google.com/search?q=Akutami+Gege&rlz=1C1GCEU_enFR1033FR1033&sourceid=chrome&ie=UTF-8">Akutami
+                                        Gege</a> </td>
+                            </tr>
+                            <tr>
+                                <th>artist</th>
+                                <td><a
+                                        href="https://www.google.com/search?q=Akutami+Gege&rlz=1C1GCEU_enFR1033FR1033&sourceid=chrome&ie=UTF-8">Akutami
+                                        Gege</a></td>
+                            </tr>
+                            <tr>
+                                <th>genre</th>
+                                <td><a href="../genre/action.html">action,</a> Fantastique, Mystère, Surnaturel</td>
+                            </tr>
+                            <tr>
+                                <th>type</th>
+                                <td>Anime</td>
+                            </tr>
+                            <tr>
+                                <th>sorties</th>
+                                <td>2020</td>
+                            </tr>
+                            <tr>
+                                <th>status</th>
+                                <td>En cours</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a id="all" href="#all"><button class="remonte"><img src="IMAGE/flechhaut.png" alt="remonté"></button></a>
+            <footer>
+                &copy; 2023 - QRlod-scantrad by The monitor | Tout droits réservés
+            </footer>
+        </div>
+    </div>
+    <script>
+        const searchButton = document.querySelector("#menu-hamburger");
+        const searchInput = document.querySelector("#nav-links");
+
+        const dropdown = document.querySelector(".dropdown")
+        const btnDrop = document.querySelector(".bloc-top")
+
+        let toggleIndex = 0;
+
+        searchButton.addEventListener("click", () => {
+            searchInput.classList.toggle("show");
+        })
+
+        btnDrop.addEventListener('click', () => {
+            if (toggleIndex === 0) {
+                dropdown.style.height = dropdown.scrollHeight + "px";
+                toggleIndex++;
+            } else {
+                dropdown.style.height = btnDrop.scrollHeight + "px";
+                toggleIndex--;
+            }
+        })
+
+
+        function adelicatrelation() {
+            window.location.href = "https://instagram.com/nzao_70?igshid=NzZlODBkYWE4Ng==";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var adelicarela = document.querySelector(".adelicarela");
+
+            adelicarela.textContent = "🗨️il n'y a pas encore de groupe de discussion, abonnez-vous sur Instagram pour qu'on puisse parler et pourquoi pas vous donner les commandes d'un groupe de discussion.";
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const btnsap = document.querySelector(".screena");
+
+            btnsap.addEventListener("click", async () => {
+
+                if (!document.fullscreenElement) {
+                    await document.documentElement.requestFullscreen();
+                } else {
+                    await document.exitFullscreen();
+                }
+            })
+        });
+    </script>
+
+</body>
+
+</html>
